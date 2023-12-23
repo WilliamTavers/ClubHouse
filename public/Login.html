@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="Project.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One">
+    <script src="getName.js"></script>
+    <script src="https://kit.fontawesome.com/06f4eb527b.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body onload="getName();">
+    <header>
+      <nav>
+        <div class="Links">
+          <a class="Nav-link" href="/index.html">Home</a>
+          <a class="Nav-link" href="/ClubPage.html">Clubs</a>
+          <a class="Nav-link" href="/Events.html">Events</a>
+          <a class="Nav-link" href="/Manage.html">Manage</a>
+        </div>
+        <div class="User-Profile">
+          <a href="/profile/" id="usernameDisplay">Username</a>
+          <i class="fa-solid fa-user" href="/events/"></i>
+        </div>
+      </nav>
+    </header>
+
+    <div class='Login_Body'>
+      <!-- TITLE -->
+      <h1 id="Login_Title">CLUBHOUSE</h1>
+      <i id="Login_User_Image" class="fa-solid fa-user"></i>
+
+      <!-- USERNAME -->
+      <p class="Login_Form_Headers">Username</p>
+      <form action="/Login_Submit" method="post" id="Login_Forms">
+        <input type="text" name="username" class="Login_Inputs" id="Login_Username" maxlength="20">
+
+        <!-- PASSWORD -->
+        <p class="Login_Form_Headers">Password</p>
+        <input type="password" name="password" class="Login_Inputs" id="Login_Password" maxlength="20">
+
+        <!-- LOGIN BUTTON -->
+        <div id="Login_Button_Div">
+          <button type="submit" class="Confirm_Buttons" id="Login_Submit">Login</button>
+        </div>
+      </form>
+
+      <!-- SIGNUP LINK -->
+      <a href="/SignUp.html" class="Link_Text">Sign Up</a>
+
+      <!-- ERROR TEXT -->
+      <br><br>
+      <div id="Error_Text"></div>
+
+      <!-- HORIZONTAL RULE -->
+      <div id="Horz_Line_Div">
+        <p class="Horz_Line"><span class="Horz_Line_Text_Span">or login with</span></p>
+      </div>
+
+      <!-- LOGIN WITH GOOGLE -->
+      <button type="button">SIGN IN USING GOOGLE ACCOUNT GOES HERE</button>
+    </div>
+
+    <script src="Login.js"></script>
+  </body>
+</html>

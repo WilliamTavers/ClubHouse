@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Sign Up</title>
+
+        <link rel="stylesheet" href="Project.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One">
+
+        <script src="https://kit.fontawesome.com/06f4eb527b.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="SignUp_Body">
+            <h1 id = "Login_Title">CREATE ACCOUNT</h1>
+            <div class="Form_Container">
+                <form action="/SignUp_Submit" method="post" class="Login_Forms" id="SignUp_Form">
+                    <div class="clearfix">
+                        <!-- COLUMN 1 -->
+                        <div class="Columns30_Margin">
+                            <!-- FIRST NAME -->
+                            <p class="SignUp_Form_Headers">First Name</p>
+                                <input type="text" name="Fname" class="Login_Inputs" id="SignUp_Fname" maxlength="20">
+                            <!-- LAST NAME -->
+                            <p class="SignUp_Form_Headers">Last Name</p>
+                                <input type="text" name="Lname" class="Login_Inputs" id="SignUp_Lname" maxlength="20">
+                            <!-- STUDENT ID -->
+                            <p class="SignUp_Form_Headers">Student ID</p>
+                                <input type="text" name="SID" class="Login_Inputs" id="SignUp_ID" maxlength="8">
+                            <!-- EMAIL -->
+                            <p class="SignUp_Form_Headers">Email</p>
+                                <input type="text" name="Email" class="Login_Inputs" id="SignUp_Email" maxlength="30">
+                        </div>
+
+                        <!-- COLUMN 2 -->
+                        <div class="Columns30">
+                            <!-- USERNAME -->
+                            <p class="SignUp_Form_Headers">Username</p>
+                                 <input type="text" name="Uname" class="Login_Inputs" id="SignUp_Uname" maxlength="20">
+                            <!-- PASSWORD -->
+                            <p class="SignUp_Form_Headers">Password</p>
+                                <input type="password" name="Pwrd" class="Login_Inputs" id="SignUp_Pwrd" maxlength="20">
+                            <!-- CONFIRM PASSWORD -->
+                            <p class="SignUp_Form_Headers">Confirm Password</p>
+                                <input type="password" name="CfrmPwrd" class="Login_Inputs" id="SignUp_CPwrd" maxlength="20">
+                            <!-- BUTTONS -->
+                            <div id="SignUp_Buttons_Div">
+                                <button type="submit" class="Confirm_Buttons" id="SignUp_Submit">Create Account</button>
+                                <button type="button" class="Cancel_Buttons" id="SignUp_Cancel">Cancel</button>
+                            </div>
+                        </div>
+
+                        <!-- COLUMN 3 -->
+                        <!-- RADIO BUTTONS TO CREATE ADMIN ACCOUNTS -->
+                        <!-- <div class="Columns20">
+                            <div id="Radio_Buttons_Div">
+                                <p class="SignUp_Form_Headers">Account Type:</p>
+                                <label for="Account_Type_1" class="Radio_Label">
+                                    <input type="radio" id="Account_Type_1" class="SignUp_Radio" name="Account_Type" value="Normal_Account" checked="checked">
+                                    Normal
+                                </label><br>
+                                <label for="Account_Type_2" class="Radio_Label">
+                                    <input type="radio" id="Account_Type_2" class="SignUp_Radio" name="Account_Type" value="Admin_Account">
+                                    Admin
+                                </label><br>
+                            </div>
+                        </div> -->
+                    </div>
+                </form>
+            </div>
+
+            <!-- ERROR TEXT -->
+            <br><br>
+            <div id="Error_Text"></div>
+
+        </div>
+        <script src="SignUp.js"></script>
+    </body>
+</html>

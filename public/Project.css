@@ -1,0 +1,1395 @@
+body, .body {
+    color: #28242e;
+    background-color: #FFFFFF;
+    font-family: sans-serif;
+    min-height: 100vh;
+    display: inline-block;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+header, footer {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: #c8c9ca;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 80px;
+}
+
+nav {
+    font-weight: bold;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 1em;
+    display: inline-block;
+}
+
+.Nav-link {
+    text-decoration: none;
+    font-size: 30px;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 23px;
+    display: inline-block;
+}
+
+.Links {
+    display: inline-block;
+    overflow: hidden;
+    min-width: 900px;
+}
+
+a:hover {
+    color: #1d5380;
+    border-bottom: 2px solid #1d5380;
+    padding-bottom: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: #28242e;
+}
+
+.BodyContent {
+    width: 100%;
+    display: flex;
+}
+
+.User-Profile {
+    text-decoration: none;
+    color: #28242e;
+    font-size: 30px;
+    text-align: center;
+    position: absolute;
+    right: 4%;
+    top: 35%;
+    margin-left: 5px;
+}
+
+.Owner-Profile {
+    color: #28242e;
+    margin-top: 22px;
+    margin-left: 15px;
+}
+
+i:hover {
+    color: #1d5380;
+}
+
+.fa-user{
+    margin-left: 10px;
+}
+
+.Sidebar {
+    position: relative;
+    top: 200px;
+    height: 80%;
+    width: 180px;
+}
+
+.SidebarClubPage {
+    width: 12%;
+    margin-top: 50px;
+    position: relative;
+}
+
+.grey {
+    background-color: lightgrey;
+}
+
+.clubOwner {
+    margin-bottom: 20px;
+    width: 80%;
+    margin-left: 10%;
+    padding-left: 10px;
+    display: flex;
+    overflow-wrap: normal;
+}
+
+.RightSidebar {
+    position: relative;
+    margin-top: 134px;
+    margin-left: 1600px;
+    width: 270px;
+    float: right;
+}
+
+.RightSidebarClubPage {
+    margin-top: 50px;
+    margin-left: 30px;
+    width: 270px;
+    float: right;
+}
+
+.Filter {
+    position: absolute;
+    margin-left: 2em;
+    background-color: #c8c9ca;
+    width: 145px;
+}
+
+.Filter-Title {
+    background-color: #7ba6b4;
+    color: #000000;
+    padding: 10px;
+    padding: auto;
+    font-size: 20px;
+}
+
+.YourEvents {
+    background-color: #c8c9ca;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 500px;
+    padding-bottom: 20px;
+}
+
+.YourEvents-Title {
+    background-color: #7ba6b4;
+    color: #000000;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 20px;
+}
+
+.Filter-List {
+    list-style-type: none;
+}
+
+.Filter-Button {
+    width: 80px;
+    margin: 8px auto;
+    background-color: #7ba6b4;
+    color: #000000;
+    border: 1px solid #3e8baa;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px #2e3f44;
+}
+.Filter-Button:hover {
+    background-color: #6491a0;
+}
+.Filter-Button label span {
+    text-align: center;
+    padding: 3px 0;
+    display: block;
+}
+.Filter-Button label input {
+    position: absolute;
+    display: none;
+    color: #000000;
+}
+.Filter-Button input:checked + span {
+    background-color: #557e8b;
+}
+
+.Notification {
+    display: inline-block;
+    margin-left: 10%;
+    color: #000000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 16px;
+    width: 80%;
+    border: none;
+}
+
+.ClubPageNotification {
+    background-color: #7ba6b4;
+    color: #000000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+    width: 145px;
+    margin-left: 10%;
+    border: none;
+}
+
+.Notification:hover {
+    background-color: #94a0a3;
+}
+
+ul {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+#Clubs_Title {
+    position: relative;
+    top: 120px;
+    left: 210px;
+    font-size: 50px;
+    width: 260px;
+    margin-right: 15px;
+}
+
+#My_Clubs {
+    position: absolute;
+    top: 180px;
+    left: 220px;
+}
+
+#Explore_Clubs {
+    position: absolute;
+    top: 180px;
+    left: 340px;
+}
+
+#My_Clubs:hover {
+    color: #1d5380;
+    border-bottom: 2px solid #1d5380;
+    padding-bottom: 5px;
+}
+
+#Explore_Clubs:hover {
+    color: #1d5380;
+    border-bottom: 2px solid #1d5380;
+    padding-bottom: 5px;
+}
+
+.Club_List {
+    position: absolute;
+    display: grid;
+    top: 250px;
+    left: 220px;
+    width: 85%;
+    height: 70%;
+    overflow-y: scroll;
+    grid-template-columns: repeat(auto-fit, 380px);
+    grid-template-rows: 287px;
+    grid-row-gap: 15px;
+    grid-column-gap: 15px;
+}
+
+#Events_Title {
+    position: relative;
+    top: 120px;
+    left: 210px;
+    font-size: 50px;
+    width: 500px;
+    margin-right: 15px;
+}
+
+#ClubPage_Title {
+    position: relative;
+    font-size: 50px;
+    width: 500px;
+    margin-top: 25px;
+    margin-right: 15px;
+}
+
+.Events_List {
+    position: absolute;
+    display: block;
+    top: 250px;
+    left: 220px;
+    width: 70%;
+    height: 70%;
+    overflow-y: scroll;
+    margin-top: -50px;
+}
+
+.ClubContent {
+    display: block;
+    margin-top: -50px;
+    margin-left: 20px;
+    width: 70%;
+    height: 70%;
+}
+
+.PostContent_Info {
+    background-clip: padding-box;
+    background-color: lightgray;
+    padding: 15px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    display: flex;
+    width: 95%;
+    height: 400px;
+    max-width: 95%;
+    max-height: 400px;
+}
+
+.Events_List > div {
+    width: 95%;
+    height: 200px;
+    max-width: 95%;
+    max-height: 200px;
+}
+
+
+.Event_Info {
+    background-clip: padding-box;
+    background-color: lightgray;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    width: 100%;
+}
+
+.EventDescription {
+    padding-right: 20px;
+}
+
+.Event_img {
+    width: 380px;
+    height: 200px;
+    border: #000000;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    float: right;
+    align-self: flex-end;
+}
+
+.EventTab_img {
+    width: 100%;
+    height: 100%;
+    border: #000000;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+}
+
+.EventTab-List {
+    display:block;
+    list-style-type: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.Tab_text {
+    display:block;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.EventDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 1%;
+    background-color: #a8a8a8;
+    background-clip: padding-box;
+}
+.Event_Content {
+    display: block;
+    width: 75%;
+}
+
+.Post_Content {
+    display: flex;
+    width: 100%;
+}
+
+.PostLeft{
+
+    width: 80%;
+
+    display: block;
+}
+.PostRight{
+
+    width: 100%;
+    padding-left: 50px;
+    display: block;
+}
+.PostTitle {
+    margin-left: 30%;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.topcontent {
+    display: flex;
+    margin-top: 40px;
+    height: 50px;
+    max-height: 50px;
+    justify-content: space-between;
+}
+
+.Post_img {
+    width: 100%;
+    height: 100%;
+}
+.PostImage {
+    width: 100%;
+    height: 75%;
+    border: #000000;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.PostAboutInfo {
+    display:flex;
+    justify-content: space-evenly;
+    width: 500px;
+}
+.NameandDate {
+    margin-left: 30px;
+    width:150px;
+    display:block;
+}
+.ClubNamedisplay {
+    margin-top: 30px;
+    margin-left: 50px;
+}
+.Event_Tab {
+    display: block;
+    margin-bottom: 40px;
+}
+
+.UpcomingEvent {
+    background-color: #dae8ec;
+    padding: 15px;
+    background-clip: padding-box;
+    margin-bottom: 20px;
+}
+
+.Event_Text {
+    height: 160px;
+    display: block;
+}
+
+.YourEvents {
+    background-color: lightgrey;
+}
+
+.Event_Text > p,h1 {
+    margin: 0px;
+}
+
+.attendButton {
+    margin-left: 50%;
+    font-size: 25px;
+}
+
+.Club_List > div {
+    width: 380px;
+    height: 287px;
+    max-width: 380px;
+    max-height: 287px;
+}
+
+.Club_img {
+    width: 380px;
+    height: 200px;
+    border: #000000;
+    border-style: solid;
+    border-width: 1px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    overflow: hidden;
+}
+
+.ClubBackground_img {
+    margin-left: -15px;
+    width: 1920px;
+    height: 400px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.Club_Name {
+    width: 360px;
+    height: 60px;
+    border: #000000;
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 10px;
+    font-size: 25px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: #c8c9ca;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1d5380;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0f3a5e;
+}
+
+/* changes */
+
+.Filter-Feed li {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+#FeedTitle {
+    position: relative;
+    top: 10px;
+    left: 210px;
+    font-size: 50px;
+    width: 500px;
+    margin-right: 15px;
+}
+
+.Feed_List {
+    position: absolute;
+    display: block;
+    top: 250px;
+    left: 220px;
+    width: 70%;
+    height: 70%;
+    overflow-y: scroll;
+    margin-top: -50px;
+}
+.Feed_List > div {
+    width: 95%;
+    height: 550px;
+    max-width: 95%;
+    max-height: 550px;
+}
+
+.Feed_Info {
+    background-clip: padding-box;
+    background-color: lightgray;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.FeedDescription {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: justify;
+
+}
+
+.Feed_img {
+    width: 360px;
+    height: 420px;
+    max-height: 420px;
+    border: #000000;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.Feed_img {
+    width: 80%;
+    border: #000000;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+}
+
+.FeedTab-List {
+    display:block;
+    list-style-type: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: -20px;
+    padding-right: -20px;
+    background-color: #dae8ec;
+
+}
+
+.Tab_text {
+    display:block;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.FeedDetails {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 1%;
+    background-color: #a8a8a8;
+    background-clip: padding-box;
+}
+.Feed_Content {
+    display: flex;
+    align-items: center;
+}
+
+.Feed_Tab {
+    display: block;
+    background-color: #0f3a5e;
+    margin-bottom: 20px;
+
+}
+
+.Feed_Text {
+    height: 420px;
+    width: 90%;
+    margin-left: 2em;
+    display: block;
+    background-color: #FFFFFF;
+}
+
+.FeedTitle {
+    text-align: center;
+    padding-top: 5px;
+    background-color: lightgrey;
+    padding-bottom: 10px;
+}
+
+.YourEvents {
+    background-color: lightgrey;
+}
+
+.Feed_Text > p,h1 {
+    margin: 0px;
+}
+
+
+.Profile_Details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 2px;
+}
+.Profile_Top {
+    display: flex;
+    align-items: center;
+}
+
+.Profile_Pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid black;
+}
+
+.Profile_Name {
+    margin-right: 10px;
+    margin-left: 50px;
+}
+
+.Published_Date {
+    margin-left: 122px;
+}
+
+.ClubName {
+    margin-left: 20px;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    margin-left: 140px;
+}
+
+.ClubName a {
+    color: #7ba6b4;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
+
+.ClubName a:hover {
+    color: blue;
+}
+
+/* BUTTONS */
+.Cancel_Buttons:hover{
+    background-color: #ac302b;
+}
+
+.Cancel_Buttons {
+    background-color: #e03c36;
+    color: white;
+    font-size: 1.2em;
+    padding: 14px 20px;
+    margin: 8px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    width: 155px;
+}
+
+.Confirm_Buttons:hover {
+    background-color: #5fc73f;
+}
+
+.Confirm_Buttons {
+    background-color: #97e036;
+    color: white;
+    font-size: 1.2em;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    width: 200px;
+}
+
+/* LOGIN PAGE */
+
+.Login_Body{
+    position: relative;
+    text-align: center;
+    top: 120px;
+    width: 100vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    min-width: 900px;
+}
+
+#Login_Title {
+    font-family: 'Russo One', serif;
+    font-size: 3.5em;
+    position: static;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    min-width: 300px;
+}
+
+#Login_User_Image {
+    font-size: 6em;
+    position: relative;
+    width: 100%;
+    margin-left: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    min-width: 50px;
+}
+
+.Login_Form_Headers {
+    font-size: 1.5em;
+    position: relative;
+    width: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    min-width: 50px;
+}
+
+#Login_Forms{
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+.Login_Inputs {
+    font-size: 1.2em;
+    text-align: center;
+    position: relative;
+    width: 300px;
+    padding: 16px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    min-width: 200px;
+}
+
+#Login_Button_Div {
+    position: static;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+#Error_Text {
+    color: #ff0000;
+}
+
+#Horz_Line_Div{
+    position: static;
+    margin: 30px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.Horz_Line {
+    margin-left: 300px;
+    margin-right: 300px;
+    border-bottom: 3px solid #c2c2c2;
+    line-height: 0.1em;
+ }
+
+ .Horz_Line_Text_Span {
+    text-align: center;
+    color: #949494d3;
+    font-size: 1.2em;
+    background:#fff;
+    padding:0 20px;
+ }
+
+ .Link_Text:hover {
+    color: #094577;
+ }
+
+ .Link_Text {
+    font-size: 1.2em;
+    color: #1d77c0;
+ }
+
+ /* SIGNUP PAGE */
+
+ .SignUp_Body{
+    position: relative;
+    text-align: center;
+    top: 200px;
+    width: 100vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    min-width: 1100px;
+}
+
+.Form_Container {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 70%;
+    min-width: 1100px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.Columns20 {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+.Columns30_Margin {
+    float: left;
+    width: 30%;
+    margin-left: 20% ;
+    text-align: center;
+}
+
+.Columns30 {
+    float: left;
+    width: 30%;
+    text-align: center;
+}
+
+.SignUp_Form_Headers {
+    font-size: 1.2em;
+    position: relative;
+    width: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    min-width: 50px;
+}
+
+#SignUp_Buttons_Div {
+    width: 100%;
+    margin: auto;
+    margin-top: 55px;
+    box-sizing: border-box;
+    min-width: 340px;
+}
+
+#SignUp_Submit{
+    font-size: 1em;
+    margin: 5px;
+    width: 155px;
+}
+
+#SignUp_Cancel{
+    font-size: 1em;
+    margin: 5px;
+    width: 155px;
+}
+
+#Radio_Buttons_Div {
+    margin: auto;
+    padding: 10px;
+    text-align: left;
+    margin-top: 50%;
+    min-width: 300px;
+}
+
+.SignUp_Radio {
+    height: 1.5em;
+    width: 1.5em;
+    cursor: pointer;
+}
+
+.Radio_Label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+/* Changes end */
+
+.club-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.club-link {
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    padding: 5px 0;
+    top: 120px;
+    left: 220px;
+    font-size: 28px;
+    width: 80px;
+    margin-top: 1em;
+    margin-right: 80px;
+}
+
+.make-post-button {
+    text-align: center;
+    position: relative;
+    background-color: #0f3a5e;
+    color: white;
+    border: white;
+    width: 200px;
+    top: 140px;
+    left: 800px;
+    text-align: center;
+    display: inline-block;
+    font-size: 28px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.make-post-button:hover {
+    background-color: #6491a0;
+}
+
+/* Profile page */
+.User-Information{
+    height: 500px;
+    margin-top: 20px;
+    background-color: #c8c9ca;
+}
+
+.Profile-Pic{
+    margin-top: 180px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Main-page{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Left-Forms{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 60px;
+    margin-top: 30px;
+}
+
+.Right-Forms{
+    vertical-align: top;
+    margin-top: 30px;
+    margin-right: 60px;
+    float: right;
+}
+
+.labels{
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+#Email, #Username, #First-Name, #Surname, #Password, #ConfirmPassword{
+    width: 360px;
+    height: 50px;
+    border-color: #808080;
+    border-width: 1px;
+}
+
+#PasswordButton{
+    width: 250px;
+    height: 50px;
+    margin-left: 55px;
+    margin-right: 55px;
+    background-color: white;
+    color: #296b9c;
+    border-radius: 3px;
+    border-color: #0f3a5e;
+    border-width: 2px;
+    font-size: large;
+}
+
+#PasswordButtonOff{
+    width: 250px;
+    height: 50px;
+    margin-left: 55px;
+    margin-right: 55px;
+    background-color: rgb(207, 206, 206);
+    color: #457497;
+    border-radius: 3px;
+    border-color: #445f75;
+    border-width: 2px;
+    font-size: large;
+}
+
+.Profile-Button {
+    width: 140px;
+    margin: 8px auto;
+    color: #000000;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px #2e3f44;
+}
+
+.Profile-Button:hover {
+    background-color: #6491a0;
+}
+
+.Profile-Button label span {
+    text-align: center;
+    padding: 3px 0;
+    display: block;
+}
+
+.Profile-Button label input {
+    position: absolute;
+    display: none;
+    color: #000000;
+}
+
+#Logout input:checked + span {
+    background-color: #c03725;
+}
+
+#EditProfile{
+    background-color: #318ead;
+    border: 1px solid #1b83ac;
+    float: left;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+#Logout{
+    background-color: #df5d5d;
+    border: 1px solid #ac3434;
+    float: right;
+    margin-right: 100px;
+    margin-top: 30px;
+}
+
+#AcceptChanges{
+    background-color: #31ad46;
+    border: 1px solid #20802d;
+    float: left;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+input:read-only{
+    color: #7c7c7c;
+}
+
+.Main-Table-page{
+    width: 90%;
+    margin-left: 35px;
+    margin-right: auto;
+    position: absolute;
+    top: 160px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th{
+    min-width: 200px;
+}
+
+.fa-solid{
+    margin-left: 42px;
+    margin-right: 42px;
+}
+
+.Make-Admin-Button {
+    width: 150px;
+    color: #000000;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px #0a3314;
+    background-color: #73c431;
+    border: 1px solid #327525;
+}
+
+.Make-Admin-Button:hover {
+    background-color: #27a34c;
+}
+
+.Make-Admin-Button label span {
+    text-align: center;
+    padding: 3px 0;
+    display: block;
+}
+
+.Make-Admin-Button label input {
+    position: absolute;
+    display: none;
+    color: #000000;
+}
+
+.Make-Admin-Button input:checked + span {
+    background-color: #367917;
+}
+/* Changes end */
+
+#joinButton {
+    height: 50px;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-right: 40px;
+    border-radius: 2px;
+    min-width: 140px;
+    color: #000000;
+    background-color: #1d77c0;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px #2e3f44;
+}
+
+#joinButton:hover {
+    background-color: #3687ca;
+}
+
+#joinButton label span {
+    text-align: center;
+    padding: 3px 0;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: auto;
+}
+
+#joinButton label input {
+    position: absolute;
+    display: none;
+    color: #000000;
+    height: 50px;
+}
+
+#joinButton label{
+    height: 50px;
+    display: block;
+}
+
+#leaveButton {
+    height: 50px;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-right: 40px;
+    background-color: #3f9478;
+    min-width: 140px;
+    color: #000000;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px #2e3f44;
+}
+
+#leaveButton:hover {
+    background-color: #6cb381;
+}
+
+#leaveButton label span {
+    text-align: center;
+    padding: 3px 0;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: auto;
+}
+
+#leaveButton label input {
+    position: absolute;
+    display: none;
+    color: #000000;
+}
+
+#leaveButton label{
+    height: 50px;
+    display: block;
+}
+
+#manageButton {
+    height: 50px;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-right: 40px;
+    background-color: #3f9478;
+    min-width: 180px;
+    color: #000000;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px #2e3f44;
+}
+
+#manageButton:hover {
+    background-color: #5ea874;
+}
+
+#manageButton label span {
+    text-align: center;
+    padding: 3px 0;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: auto;
+}
+
+#manageButton label input {
+    position: absolute;
+    display: none;
+    color: #000000;
+}
+
+#manageButton label{
+    height: 50px;
+    display: block;
+}
+
+.Activated{
+    color: #1d5380;
+    border-bottom: 2px solid #1d5380;
+    padding-bottom: 5px;
+}
+
+/* EVENTS PAGE*/
+
+#attendButton {
+    height: 50px;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-right: 40px;
+    border-radius: 2px;
+    min-width: 120px;
+    color: #000000;
+    background-color: #1d77c0;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px #2e3f44;
+}
+
+#attendButton:hover {
+    background-color: #3687ca;
+}
+
+#attendButton label span {
+    text-align: center;
+    padding: 3px 0;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: auto;
+}
+
+#attendButton label input {
+    position: absolute;
+    display: none;
+    color: #000000;
+    height: 50px;
+}
+
+#attendButton label{
+    height: 50px;
+    display: block;
+}
+
+
+#leaveEventButton {
+    height: 50px;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-right: 40px;
+    background-color: #3f9478;
+    min-width: 120px;
+    color: #000000;
+    border-radius: 4px;
+    box-shadow: 0px 1px 2px #2e3f44;
+}
+
+#leaveEventButton:hover {
+    background-color: #6cb381;
+}
+
+#leaveEventButton label span {
+    text-align: center;
+    padding: 3px 0;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: auto;
+}
+
+#leaveEventButton label input {
+    position: absolute;
+    display: none;
+    color: #000000;
+}
+
+#leaveEventButton label{
+    height: 50px;
+    display: block;
+}

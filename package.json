@@ -1,0 +1,22 @@
+{
+  "name": "23s1-wdc-ug092-real-group-that-exists-and-is-going-to-do-the-project-1",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "morgan": "~1.9.1",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.9.3"
+  },
+  "description": "By default, you should be sent to the index.html page when launching our page's server.\r From here, the Nav bar up the top will take you to three of our pages, the home feed,\r Clubs list, and events list. \r There is one more page as a part of this submission, which is the template for a group's\r homepage. To access this, either click any of the 'Club Name' links on posts on the homepage,\r or change the url to 'http://localhost:8080/ClubHomePage.html' to access the ClubHomePage.html\r page.",
+  "main": "app.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

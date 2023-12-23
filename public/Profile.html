@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>ProfilePage</title>
+
+        <link rel="stylesheet" href="Project.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="Project.js"></script>
+        <script src="getName.js"></script>
+        <script src="ProfileInfo.js"></script>
+        <script src="https://kit.fontawesome.com/06f4eb527b.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="body" onload="getName(); profileInfo();">
+        <div>
+        <header>
+            <nav>
+                <div class="Links">
+                    <a class="Nav-link" href="/index.html">Home</a>
+                    <a class="Nav-link" href="/ClubPage.html">Clubs</a>
+                    <a class="Nav-link" href="/Events.html">Events</a>
+                    <a class="Nav-link" href="/Manage.html">Manage</a>
+                </div>
+                <div class="User-Profile">
+                    <a href="/Login.html" id="usernameDisplay">Username</a>
+                    <i class="fa-solid fa-user" href="/events/"></i>
+                </div>
+            </nav>
+        </header>
+        </div>
+
+        <div class="Main-page">
+            <div class="Profile-Button" id="EditProfile">
+                <label>
+                    <input type="checkbox" value="1" id="AcceptEditButton" onclick="EditProfile()"><span id="EditText">Edit Profile</span>
+                </label>
+            </div>
+            <div class="Profile-Button" id="Logout">
+                <label>
+                    <input type="checkbox" value="1" onclick="logout();"><span>Log Out</span>
+                </label>
+            </div>
+        <img src="/images/icecreamImage.jpg" alt="No img Loaded" class="Profile-Pic">
+        <div class="User-Information">
+            <div class="Info-Forms">
+                <div class="Left-Forms">
+                    <form>
+                        <label for="First-Name" class="labels">First name</label>
+                        <input type="text" id="First-Name" name="First-Name" value="THE USERS NAME" readonly><br>
+                        <label for="Username" class="labels">Username</label>
+                        <input type="text" id="Username" name="Username" value="THE USERNAME" readonly><br>
+                        <label for="Email" class="labels">Email</label>
+                        <input type="text" id="Email" name="Email" value="THE USERS EMAIL" readonly>
+                    </form>
+                </div>
+                <div class="Right-Forms">
+                    <form id="FormRight">
+                        <label for="Surname" class="labels">Surname</label>
+                        <input type="text" id="Surname" name="Surname" value="THE USERS SURNAME" readonly><br>
+                        <label for="Password" class="labels">Password</label>
+                        <input type="text" id="Password" name="Password" value="THE USERS PASSWORD" readonly><br>
+                    </form>
+                    <form id="FormRightPassword">
+                        <label for="PasswordButton" class="labels">Password</label>
+                        <input type="button" id="PasswordButton" name="PasswordButton" value="Change Password" onclick="ChangePassword()"><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+        <script>
+            function EditProfile(){
+                document.getElementById("EditProfile").id = "AcceptChanges";
+                document.getElementById("AcceptEditButton").onclick = function() {AcceptPassword()};
+                document.getElementById("EditText").innerHTML = "Accept Changes";
+                document.getElementById("First-Name").readOnly = false;
+                document.getElementById("Username").readOnly = false;
+                document.getElementById("Email").readOnly = false;
+                document.getElementById("Surname").readOnly = false;
+                document.getElementById("PasswordButton").readOnly = true;
+                document.getElementById("PasswordButton").id = "PasswordButtonOff";
+            }
+
+            function ChangePassword(){
+                document.getElementById("EditProfile").id = "AcceptChanges";
+                document.getElementById("Password").readOnly = false;
+                document.getElementById("AcceptEditButton").onclick = function() {AcceptPassword()};
+                document.getElementById("EditText").innerHTML = "Accept Changes";
+                document.getElementById("FormRightPassword").innerHTML = '<label for="ConfirmPassword" class="labels">Confirm Password</label><input type="text" id="ConfirmPassword" name="ConfirmPassword" value="CONFIRM PASSWORD"><br>'
+            }
+
+            function AcceptPassword(){
+                if(document.getElementById("ConfirmPassword")){
+                    if(document.getElementById("ConfirmPassword").value == document.getElementById("Password").value){
+                        updateProfileInfo();
+                    } else {
+                        alert("Confirm Password doesn't match!");
+                        return;
+                    }
+                }
+                updateProfileInfo();
+            }
+
+            function logout(){
+                console.log("ran logout");
+                let xhttp = new XMLHttpRequest();
+
+                xhttp.open("POST", "/logout");
+
+                xhttp.onreadystatechange = function (req, res, next) {
+                    if (this.readyState === 4 && this.status === 200) {
+                        alert("Logged out");
+                        window.location.href = "/index.html";
+                        return;
+                    }
+                };
+
+                xhttp.send();
+            }
+        </script>
+
+    </body>
+
+</html>

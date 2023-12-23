@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Admin</title>
+
+        <link rel="stylesheet" href="Project.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="AdminMembers.js"></script>
+        <script src="https://kit.fontawesome.com/06f4eb527b.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="body">
+        <div>
+        <header>
+            <nav>
+                <div class="Links">
+                    <a class="Nav-link" href="/index.html">Home</a>
+                    <a class="Nav-link" href="/ClubPage.html">Clubs</a>
+                    <a class="Nav-link" href="/Events.html">Events</a>
+                </div>
+                <div class="User-Profile">
+                    <a href="/profile/">Username</a>
+                    <i class="fa-solid fa-user" href="/events/"></i>
+                </div>
+            </nav>
+        </header>
+        </div>
+
+        <div class="Main-Table-page">
+            <table class="Admin-Table">
+                <thead>
+                    <tr>
+                        <th>UserID</th>
+                        <th>GivenName</th>
+                        <th>Surname</th>
+                        <th>Email</th>
+                        <th>username</th>
+                        <th>Edit/Delete</th>
+                        <th>AdminStatus</th>
+                    </tr>
+                </thead>
+                <tbody id = "tableBody">
+                </tbody>
+              </table>
+        </div>
+    </body>
+
+</html>

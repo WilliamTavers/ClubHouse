@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <title>Manage Events</title>
+
+    <link rel="stylesheet" href="Trial.css">
+    <script src="ManagingEvents.js"></script>
+    <script src = "getEventAttendees.js"></script>
+    <script src="getName.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="Managed.js"></script>
+    <script src="Manage.js"></script>
+    <script src="Email.js"></script>
+    <script src="getIdsEvents.js"></script>
+    <script src="https://kit.fontawesome.com/06f4eb527b.js" crossorigin="anonymous"></script>
+</head>
+
+<body class = "body" onload="getManagedClubs(); getName();">
+    <div>
+        <header>
+            <nav>
+                <div class="Links">
+                    <a class="Nav-link" href="/index.html">Home</a>
+                    <a class="Nav-link" href="/ClubPage.html">Clubs</a>
+                    <a class="Nav-link" href="/Events.html">Events</a>
+                    <a class="Nav-link" href="/Manage.html">Manage</a>
+                </div>
+                <div class="User-Profile">
+                    <a href="/profile/" id="usernameDisplay">Username</a>
+                    <i class="fa-solid fa-user" href="/events/"></i>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <div class="Sidebar">
+        <div class="filterManaged">
+            <div class="filterManaged-Title">
+                Manage
+            </div>
+            <ul class="Filter-List" id="managedClubList">
+            </ul>
+        </div>
+    </div>
+
+    <h1 id="Events_Title">CLUB NAME</h1>
+    <div class="club-links">
+            <a class="club-link" href="/Manage.html">Posts</a>
+            <a class="club-link" href="/ManageEvents.html">Events</a>
+            <button type = "button" id="make-event-button" class="make-event-button" onclick="MakeNewEvent()">Make Event</button>
+    </div>
+
+
+    <!-- Attempt Start -->
+    <div class="ManageList" id="ManageEventList">
+
+
+
+    </div>
+
+    <!-- Attempt Ends -->
+
+    <!-- <div class="SidebarRight">
+        <div class="filterManagedRight">
+            <div class="filterManaged-Title">
+                Members
+            </div>
+            <ul class="Filter-List">
+                <li><label><input type="button" class="filterManaged-Button" value="Club 1"></label></li>
+                <li><label><input type="button" class="filterManaged-Button" value="Club 2"></label></li>
+                <li><label><input type="button" class="filterManaged-Button" value="Club 3"></label></li>
+                <li><label><input type="button" class="filterManaged-Button" value="Club 4"></label></li>
+            </ul>
+        </div>
+    </div> -->
+
+    <div class="SidebarRight">
+        <div class="filterManagedRight">
+            <div class="filterManaged-Title">
+                Members (Total)
+            </div>
+            <ul class = "Filter-List"  id="rightFilterList">
+                <!-- <li class="member-card">
+                    <img src="/path_to_profile_picture2.jpg" alt="Profile Picture" class="member-pic">
+                    <div class="member-info">
+                        <h2 class="member-name">Name 2</h2>
+                        <p class="member-role">Role 2</p>
+                    </div>
+                </li>
+                <li class="member-card">
+                    <img src="/path_to_profile_picture3.jpg" alt="Profile Picture" class="member-pic">
+                    <div class="member-info">
+                        <h2 class="member-name">Name 3</h2>
+                        <p class="member-role">Role 3</p>
+                    </div>
+                </li>
+                <li class="member-card">
+                    <img src="/path_to_profile_picture4.jpg" alt="Profile Picture" class="member-pic">
+                    <div class="member-info">
+                        <h2 class="member-name">Name 4</h2>
+                        <p class="member-role">Role 4</p>
+                    </div>
+                </li>
+                <li class="member-card">
+                    <img src="/path_to_profile_picture5.jpg" alt="Profile Picture" class="member-pic">
+                    <div class="member-info">
+                        <h2 class="member-name">Name 5</h2>
+                        <p class="member-role">Role 5</p>
+                    </div>
+                </li> -->
+            </ul>
+            <button type ="button" id="view-all-button">View All</button>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p>All member cards go here</p>
+        </div>
+    </div>
+    <div id="attendees-modal" class="modal">
+        <div class="modal-content">
+            <span class="attendees-close-button">&times;</span>
+            <p>All attendee cards go here</p>
+        </div>
+    </div>
+    <script>
+        function MakeNewEvent(){
+            let eventCardHTML = `
+                <div class="Manage_Info" id = "newevent">
+                    <div class="button-container">
+                        <button class="delete-button" onclick="deleteEvent('newevent')">X</button>
+                        <button class="Post-button" onclick="AddEvent(); getIdsEvents();">P</button>
+                    </div>
+                    <div class="Profile_Details">
+                        <div class="Profile_Top">
+                            <img src="/path_to_profile_picture.jpg" alt="Profile Picture" class="Profile_Pic">
+                            <h2 class="Profile_Name"></h2>
+                            <h2 class="ClubName"><a href="/ClubHomePage.html"></a></h2>
+                        </div>
+                        <p class="Published_Date"></p>
+                    </div>
+                    <div class="Manage_Content">
+                        <img src="/images/icecreamImage.jpg" alt="No img Loaded" class="Manage_img">
+                        <div class="Manage_Text">
+                            <form class="ManageTitle"><label for="EventName" class="labels">Event Name</label>
+                        <textarea id="EventName" name="EventName" value="Edit Title"></textarea><br>
+                        <form class="ManageTitle"><label for="EventLoc" class="labels">Event Location</label>
+                        <textarea id="EventLoc" name="EventLoc" value="Edit Location"></textarea><br>
+                            <label for="publicOrPrivate" class="labels">On to make public</label>
+                        <input type="checkbox" id="publicOrPrivate" name="publicOrPrivate" value="Public"><br>
+                            <label for="EventDes" class="labels">Description</label>
+                        <textarea id="EventDes" name="EventDes" value="Edit Description"></textarea>
+                        </form>
+                        </div>
+                    </div>
+                </div>`;
+                document.getElementById("ManageEventList").innerHTML += eventCardHTML;
+        }
+
+        function AddEvent(){
+                console.log("ran addevent");
+
+                if(document.getElementById("publicOrPrivate").checked){
+                    var PubOrPriv = "1";
+                } else {
+                    var PubOrPriv = "0";
+                }
+                var EventInfo = {
+                    EventName: document.getElementById("EventName").value,
+                    EventDescription: document.getElementById("EventDes").value,
+                    ClubName: document.getElementById("Events_Title").innerText,
+                    Location: document.getElementById("EventLoc").innerText,
+                    PublicPrivate: PubOrPriv
+                };
+
+                console.log(EventInfo);
+                let xhttp = new XMLHttpRequest();
+
+                xhttp.open("POST", "/AddNewEvent");
+                xhttp.setRequestHeader("Content-Type", "application/json");
+
+                xhttp.onreadystatechange = function (req, res, next) {
+                    if (this.readyState === 4 && this.status === 200) {
+                        console.log("We did it!");
+                    }
+                };
+
+                xhttp.send(JSON.stringify(EventInfo));
+
+        }
+
+        function deleteEvent(eventID){
+            var eventCard = document.getElementById("card"+eventID);
+            console.log(eventID);
+            eventCard.remove();
+
+            var xhttp1 = new XMLHttpRequest();
+            xhttp1.open('POST', '/deleteEvent');
+            xhttp1.setRequestHeader('Content-Type', 'application/json');
+            xhttp1.send(JSON.stringify({ eventID }));
+        }
+    </script>
+</body>
+</html>

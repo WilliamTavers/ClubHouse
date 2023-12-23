@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Clubs</title>
+
+        <link rel="stylesheet" href="Project.css">
+        <script src="getName.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="Project.js"></script>
+        <script src="ClubPage.js"></script>
+        <script src="https://kit.fontawesome.com/06f4eb527b.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="body" onload="getName(); ClubPage();">
+        <div>
+            <header>
+                <nav>
+                    <div class="Links">
+                        <a class="Nav-link" href="/index.html">Home</a>
+                        <a class="Nav-link" href="/ClubPage.html">Clubs</a>
+                        <a class="Nav-link" href="/Events.html">Events</a>
+                        <a class="Nav-link" href="/Manage.html">Manage</a>
+                    </div>
+                    <div class="User-Profile">
+                        <a href="/profile/" id="usernameDisplay">Username</a>
+                        <i class="fa-solid fa-user" href="/events/"></i>
+                    </div>
+                </nav>
+            </header>
+
+            <h1 id="Clubs_Title">My Clubs</h1>
+            <h3 id="My_Clubs" class="">My Clubs</h3>
+            <h3 id="Explore_Clubs" class="">Explore Clubs</h3>
+
+            <div class="Club_List" id="ClubsDisplayList">
+                <!-- Clubs tabs will go here -->
+            </div>
+        </div>
+    </body>
+
+</html>

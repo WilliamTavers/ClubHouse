@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>ClubHomePage</title>
+
+        <link rel="stylesheet" href="Project.css">
+        <script src="getName.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="Project.js"></script>
+        <script src="ClubHomePage.js"></script>
+        <script src="joinClubHomePage.js"></script>
+        <script src="leaveClubHomePage.js"></script>
+        <script src="https://kit.fontawesome.com/06f4eb527b.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="body" onload="getName(); ClubHomePage(); joinOrLeaveButton(); clubEvents();">
+        <div>
+        <header>
+            <nav>
+                <div class="Links">
+                    <a class="Nav-link" href="/index.html">Home</a>
+                    <a class="Nav-link" href="/ClubPage.html">Clubs</a>
+                    <a class="Nav-link" href="/Events.html">Events</a>
+                    <a class="Nav-link" href="/Manage.html">Manage</a>
+                </div>
+                <div class="User-Profile">
+                    <a href="/profile/" id="usernameDisplay">Username</a>
+                    <i class="fa-solid fa-user" href="/events/"></i>
+                </div>
+            </nav>
+        </header>
+
+
+        <div class="ClubImage">
+            <img src="/images/Forest.jpg" alt="No img Loaded" class="ClubBackground_img">
+        </div>
+        <div class="BodyContent">
+            <div class="SidebarClubPage">
+                <div class="grey clubOwner">
+                    <h3>Club Manager</h3>
+                    <div class="Owner-Profile">
+                        <i class="fa-solid fa-user" href="/events/"></i>
+                    </div>
+                </div>
+                <div class="grey clubOwner">
+                    <p>a bunch of text containing info on the club's main locations</p>
+                </div>
+                <div class="grey clubOwner">
+                    <p>Club description here</p>
+                </div>
+                <div class="grey clubOwner" id="Notification">
+                    <button type="button" class="grey Notification" onclick="OpenEmail()">
+                        Notifications
+                    </button>
+                </div>
+            </div>
+            <div class="ClubContent" id="postContent">
+                <div class="topcontent" id="topContent">
+                    <h1 id="ClubPage_Title">Club Name</h1>
+                    <div class="joinButton" id="joinButton">
+                        <label>
+                            <input type="checkbox" value="1" id="joinInput" onclick="joinClubHomePage()"><span id="joinText">Join Group</span>
+                        </label>
+                    </div>
+                    <div class="manageButton" id="manageButton">
+                        <label action="/Manage.html">
+                            <input type="checkbox" value="1" id="manageInput"><span id="manageText">Manage Club</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="RightSidebarClubPage">
+                <div class="YourEvents">
+                    <div class="YourEvents-Title">
+                        Upcoming Events
+                    </div>
+                    <ul class="EventTab-List" id="EventTab-List">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+        <script>
+            function OpenEmail(){
+                document.getElementById("Notification").innerHTML = '<input type="checkbox" id="PostNotifs" name="PostNotifs" value="Post"><label for="PostNotifs">Recieve Post Notifications</label><br><input type="checkbox" id="EventNotifs" name="EventNotifs" value="Event"><label for="EventNotifs">Recieve Event Notifications</label><br><div class="joinButton" id="joinButton"><label><input type="checkbox" value="1" id="joinInput" onclick="NotifDetails()"><span id="joinText">Recieve Emails</span></label></div>';
+            }
+
+            function NotifDetails(){
+                var Details = {
+                    PostDetail: document.getElementById("PostNotifs").checked,
+                    EventDetail: document.getElementById("EventNotifs").checked
+                };
+
+                console.log("ran NotifDetails function for a club");
+                console.log(Details.PostDetail);
+                console.log(Details.EventDetail);
+
+                let xhttp = new XMLHttpRequest();
+
+                xhttp.open("POST", "/addNotifDetails");
+                xhttp.setRequestHeader("Content-Type", "application/json");
+
+                xhttp.onreadystatechange = function (req, res, next) {
+                    if (this.readyState === 4 && this.status === 200) {
+
+                        const response = JSON.parse(this.responseText);
+                        if (response.length > 0) {
+                            document.getElementById("ClubPage_Title").innerHTML = response[0].ClubName;
+                            for (let index = 0; index < response.length; index++) {
+                                document.getElementById("postContent").innerHTML += '<div class="PostContent_Info"><div class="Post_Content"><div class="PostLeft"><div class="PostAboutInfo"><div class="Owner-Profile"><i class="fa-solid fa-user" href="/events/"></i></div><div class="NameandDate"><p id="posterName"></p><p id="postDate">' + nodash +'</p></div><p class="ClubNamedisplay" id="postClubName">'+ name +'</p></div><div class="PostImage"><img src="/images/icecreamImage.jpg" alt="No img Loaded" class="Post_img"></div></div><div class="PostRight"><div class="PostTitle"><h1 id="postTitle">'+response[0].PostTitle+'</h1></div><div class="PostText" id="postText"><p>'+response[0].PostText+'</p></div></div></div></div>';
+                            }
+                        } else {
+                            document.getElementById("postContent").innerHTML += '<p>No posts in this group!</p>';
+                        }
+                    }
+                };
+                console.log(JSON.stringify(Details));
+                xhttp.send(JSON.stringify(Details));
+            }
+        </script>
+<div></div>
+    </body>
+
+</html>

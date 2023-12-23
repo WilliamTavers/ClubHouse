@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Events</title>
+
+        <link rel="stylesheet" href="Project.css">
+        <script src="getName.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+        <script src="Project.js"></script>
+        <script src="Events.js"></script>
+        <script src="https://kit.fontawesome.com/06f4eb527b.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="body" onload="getName(); getFullEvents(); eventsEvents(); attendingOrNot();">
+        <div>
+        <header>
+            <nav>
+                <div class="Links">
+                    <a class="Nav-link" href="/index.html">Home</a>
+                    <a class="Nav-link" href="/ClubPage.html">Clubs</a>
+                    <a class="Nav-link" href="/Events.html">Events</a>
+                    <a class="Nav-link" href="/Manage.html">Manage</a>
+                </div>
+                <div class="User-Profile">
+                    <a href="/profile/" id="usernameDisplay">Username</a>
+                    <i class="fa-solid fa-user" href="/events/"></i>
+                </div>
+            </nav>
+        </header>
+
+        <h1 id="Events_Title">Upcoming Events</h1>
+
+        <div class="Events_List" id="EventsList">
+
+        </div>
+
+        <div class="RightSidebar">
+            <div class="YourEvents">
+                <div class="YourEvents-Title">
+                    Your Events
+                </div>
+                <ul class="EventTab-List" id="EventTab-List">
+
+                </ul>
+            </div>
+        </div>
+
+        </div>
+
+
+        <script>
+            function AttendEvent(EventID){
+                console.log("attending an event " + EventID);
+                attendEventRoute(EventID);
+            }
+
+            function leaveEvent(EventID){
+                console.log("leaving an event " + EventID);
+                leaveEventRoute(EventID);
+            }
+
+            function manageGroup(){
+
+            }
+        </script>
+    </body>
+
+</html>
